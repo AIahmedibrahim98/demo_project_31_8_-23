@@ -10,5 +10,11 @@ class TestController extends Controller
     {
         return "Hello $x .. Your Age is $y";
     }
-}
 
+    public function hello($name , Request $request)
+    {
+        echo $name;
+        echo $request->age;
+        echo $request->job;
+    }
+}
