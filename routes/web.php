@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClacController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,3 +77,19 @@ Route::get('hello-v3/{name}', [TestController::class, 'hello']);
 Route::get('hamada/{id}', function ($id) {
     return "This data for user Num $id";
 })->name('user-data');
+
+Route::prefix("users")->as('users.')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::get('/create', [UserController::class, 'create'])->name('create');
+    Route::get('/show/{id}', [UserController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
+    Route::get('/delete/{id}', [UserController::class, 'delete'])->name('delete');
+});
+
+
+Route::get('lec5-1',fn()=>view('lec5-1'));
+Route::get('lec5-2',fn()=>view('lec5-2'));
+Route::get('page1',function(){
+    $name = "ahmed";
+    return view('page1',['koko'=>$name]);
+});
