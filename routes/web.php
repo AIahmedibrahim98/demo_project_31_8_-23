@@ -88,7 +88,6 @@ Route::prefix("users")->as('users.')->group(function () {
 });
 
 
-<<<<<<< HEAD
 Route::get('lec5-1', fn () => view('lec5-1'));
 Route::get('lec5-2', fn () => view('lec5-2'));
 
@@ -105,11 +104,3 @@ Route::get('page1', function () {
 Route::get('sales', [SalesContoller::class, 'sales']);
 
 Route::get('page2',fn()=>view('page2'));
-=======
-Route::get('lec5-1',fn()=>view('lec5-1'));
-Route::get('lec5-2',fn()=>view('lec5-2'));
-Route::get('page1',function(){
-    $name = "ahmed";
-    return view('page1',['koko'=>$name]);
-});
->>>>>>> 9c4551dbca464b3da97120a2b87c04bd44b62b82
