@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('task_details', function (Blueprint $table) {
+            $table->id();
+            $table->text('description');
+            $table->date('due_date');
+
+            // $table->unsignedBigInteger('task_id');
+            // $table->foreign('task_id')->references('id')->on('tasks');
+
+            $table->foreignId('task_id')->constrained();
+            // $table->foreignId('main_task_id')->constrained('tasks');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('task_details');
+    }
+};

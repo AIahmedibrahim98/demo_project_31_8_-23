@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClacController;
+use App\Http\Controllers\HrController;
 use App\Http\Controllers\SalesContoller;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
@@ -103,4 +104,8 @@ Route::get('page1', function () {
 
 Route::get('sales', [SalesContoller::class, 'sales']);
 
-Route::get('page2',fn()=>view('page2'));
+Route::get('page2', fn () => view('page2'));
+
+Route::prefix('hr')->group(function () {
+    Route::get('', [HrController::class, 'index'])->name('index');
+})->name('hr.');
