@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClacController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HrController;
 use App\Http\Controllers\SalesContoller;
 use App\Http\Controllers\TestController;
@@ -109,3 +110,5 @@ Route::get('page2', fn () => view('page2'));
 Route::prefix('hr')->group(function () {
     Route::get('', [HrController::class, 'index'])->name('index');
 })->name('hr.');
+
+Route::get('employees', [EmployeeController::class, 'index'])->name('employees');
