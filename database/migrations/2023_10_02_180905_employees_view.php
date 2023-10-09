@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-       DB::unprepared(""):
+    //    DB::unprepared(""):
     }
 
     /**
@@ -20,6 +20,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::unprepared(""):
+        // DB::unprepared(""):
     }
 };

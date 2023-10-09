@@ -109,6 +109,7 @@ Route::get('page2', fn () => view('page2'));
 
 Route::prefix('hr')->group(function () {
     Route::get('', [HrController::class, 'index'])->name('index');
+    Route::get('dml', [HrController::class, 'dml'])->name('dml');
 })->name('hr.');
 
 Route::get('employees', [EmployeeController::class, 'index'])->name('employees');
