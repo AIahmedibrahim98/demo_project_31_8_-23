@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClacController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HrController;
@@ -113,3 +114,11 @@ Route::prefix('hr')->group(function () {
 })->name('hr.');
 
 Route::get('employees', [EmployeeController::class, 'index'])->name('employees');
+Route::get('employees/model', [EmployeeController::class, 'model'])->name('employees.model');
+
+Route::prefix('categories')->group(function () {
+    Route::get('', [CategoryController::class, 'index'])->name('index');
+    Route::get('store', [CategoryController::class, 'store'])->name('store');
+    Route::get('update', [CategoryController::class, 'update'])->name('update');
+    Route::get('delete', [CategoryController::class, 'delete'])->name('delete');
+})->name('categories.');
